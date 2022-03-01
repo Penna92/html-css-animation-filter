@@ -1,0 +1,107 @@
+/* reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* general */
+body {
+  height: 100vh;
+  padding-bottom: 100px;
+}
+.container {
+  height: 650px;
+  min-height: 650px;
+  width: 1200px;
+  min-width: 1200px;
+  margin: 20px auto;
+  position: relative;
+  text-align: center;
+  border-bottom: 3px solid black;
+}
+h1 {
+  /* color: red; */
+  font-size: 48px;
+  margin-top: 30px;
+  padding-bottom: 40px;
+  border-bottom: 3px solid black;
+}
+
+/* immagine maialino */
+.pig-img-block {
+  position: absolute;
+  width: 225px;
+  height: 225px;
+  bottom: 50%;
+  left: 20px;
+  transform: translate(0, 50%);
+}
+.pig-img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* immagine cannone */
+.cannon-img-block {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  width: 360px;
+  height: 225px;
+}
+.cannon-img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cannon-img-block:active ~ .hamburger-img-block {
+  display: block;
+}
+.cannon-img-block:active + .pig-img-block {
+  transition: 10s;
+  transition-delay: 2s;
+  /* transform: scale(1.1); */
+  width: 300px;
+  height: 300px;
+  left: -30px;
+}
+
+/* immagine hamburger */
+.hamburger-img-block {
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 35%;
+  right: 30%;
+  animation: example 2s linear infinite;
+  display: none;
+}
+@keyframes example {
+  0% {
+    right: 30%;
+    top: 35%;
+  }
+  25% {
+    right: 43%;
+    top: 20%;
+  }
+  50% {
+    right: 55%;
+    top: 15%;
+  }
+  75% {
+    right: 67%;
+    top: 25%;
+  }
+  100% {
+    right: 83%;
+    top: 40%;
+  }
+}
+.hamburger-img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
